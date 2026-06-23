@@ -18,13 +18,26 @@ class KaryawanMagang extends Karyawan {
     }
 
     public function tampilkanProfilKaryawan() {
-        echo "ID Karyawan: " . $this->id_karyawan . "<br>";
-        echo "Nama Karyawan: " . $this->nama_karyawan . "<br>";
-        echo "Departemen: " . $this->departemen . "<br>";
-        echo "Hari Kerja Masuk: " . $this->hari_kerja_masuk . "<br>";
-        echo "Gaji Dasar Per Hari: " . $this->gaji_dasar_per_hari . "<br>";
-        echo "Jenis Karyawan: " . $this->jenis_karyawan . "<br>";
-        echo "Uang Saku Bulanan: " . $this->uang_saku_bulanan . "<br>";
-        echo "Sertifikat Kampus Merdeka: " . ($this->sertifikat_kampus_merdeka ? 'Ya' : 'Tidak') . "<br>";
+        return [
+            'id_karyawan' => $this->id_karyawan,
+            'nama_karyawan' => $this->nama_karyawan,
+            'departemen' => $this->departemen,
+            'hari_kerja_masuk' => $this->hari_kerja_masuk,
+            'gaji_dasar_per_hari' => $this->gaji_dasar_per_hari,
+            'jenis_karyawan' => $this->jenis_karyawan,
+            'uang_saku_bulanan' => $this->uang_saku_bulanan,
+            'sertifikat_kampus_merdeka' => $this->sertifikat_kampus_merdeka,
+        ];
+    }
+
+    public static function getAllKaryawanMagang($koneksi) {
+        $sql = "SELECT * FROM tabel_karyawan WHERE jenis_karyawan = 'Magang'";
+        $hasil = $koneksi->query($sql);
+
+        if ($hasil && $hasil->num_rows > 0) {
+            return $hasil->fetch_all(MYSQLI_ASSOC);
+        }
+
+        return [];
     }
 }

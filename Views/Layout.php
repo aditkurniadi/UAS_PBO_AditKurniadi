@@ -50,7 +50,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="DataTiketRegular.php"
+                                        <a href="DataKaryawanTetap.php"
                                             class="group flex gap-x-3 rounded-md bg-gray-50 p-2 text-xs/5 font-semibold text-indigo-600 dark:bg-white/5 dark:text-white">
                                             Data Karyawan Tetap
                                         </a>
@@ -62,7 +62,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="DataTiketVelvet.php"
+                                        <a href="DataKaryawanMagang.php"
                                             class="group flex gap-x-3 rounded-md bg-gray-50 p-2 text-xs/5 font-semibold text-indigo-600 dark:bg-white/5 dark:text-white">
                                             Data Karyawan Magang
                                         </a>
@@ -111,7 +111,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="DataTiketRegular.php"
+                                <a href="DataKaryawanTetap.php"
                                     class="group flex gap-x-3 rounded-md p-2 text-xs/5 font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
                                     <svg class="size-5 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white"
                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -133,7 +133,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="DataTiketVelvet.php"
+                                <a href="DataKaryawanMagang.php"
                                     class="group flex gap-x-3 rounded-md p-2 text-xs/5 font-semibold text-gray-700 hover:bg-gray-50 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
                                     <svg class="size-5 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white"
                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -194,7 +194,7 @@
         </main>
 
         <footer class="text-center py-6 text-gray-500 dark:text-gray-400 text-sm">
-            <p>&copy; 2026 Sistem Informasi Akademik.</p>
+            <p>&copy; 2026 Sistem Management Karyawan.</p>
         </footer>
     </div>
 

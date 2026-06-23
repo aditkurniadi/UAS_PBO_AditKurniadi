@@ -18,13 +18,26 @@ class KaryawanTetap extends Karyawan{
     }
 
     public function tampilkanProfilKaryawan() {
-        echo "ID Karyawan: " . $this->id_karyawan . "<br>";
-        echo "Nama Karyawan: " . $this->nama_karyawan . "<br>";
-        echo "Departemen: " . $this->departemen . "<br>";
-        echo "Hari Kerja Masuk: " . $this->hari_kerja_masuk . "<br>";
-        echo "Gaji Dasar Per Hari: " . $this->gaji_dasar_per_hari . "<br>";
-        echo "Jenis Karyawan: " . $this->jenis_karyawan . "<br>";
-        echo "Tunjangan Kesehatan: " . $this->tunjangan_kesehatan . "<br>";
-        echo "Opsi Saham ID: " . $this->opsi_saham_id . "<br>";
+        return [
+            'id_karyawan' => $this->id_karyawan,
+            'nama_karyawan' => $this->nama_karyawan,
+            'departemen' => $this->departemen,
+            'hari_kerja_masuk' => $this->hari_kerja_masuk,
+            'gaji_dasar_per_hari' => $this->gaji_dasar_per_hari,
+            'jenis_karyawan' => $this->jenis_karyawan,
+            'tunjangan_kesehatan' => $this->tunjangan_kesehatan,
+            'opsi_saham_id' => $this->opsi_saham_id,
+        ];
+    }
+
+    public static function getAllKaryawanTetap($koneksi) {
+        $sql = "SELECT * FROM tabel_karyawan WHERE jenis_karyawan = 'Tetap'";
+        $hasil = $koneksi->query($sql);
+
+        if ($hasil && $hasil->num_rows > 0) {
+            return $hasil->fetch_all(MYSQLI_ASSOC);
+        }
+
+        return [];
     }
 }

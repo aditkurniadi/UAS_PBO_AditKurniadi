@@ -2,9 +2,9 @@
 $title = "Manajemen Data Karyawan";
 
 require_once __DIR__ . '/../Database/Koneksi.php';
-require_once __DIR__ . '/../Service/KaryawanTetap.php';
+require_once __DIR__ . '/../Service/KaryawanMagang.php';
 
-$data_karyawan = KaryawanTetap::getAllKaryawanTetap($db->koneksi);
+$data_karyawan = KaryawanMagang::getAllKaryawanMagang($db->koneksi);
 
 ob_start();
 ?>
@@ -12,8 +12,8 @@ ob_start();
 <div class="px-4 sm:px-6 lg:px-8 mt-4">
     <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-            <h1 class="text-base font-semibold text-gray-900 dark:text-white">Data Karyawan Tetap</h1>
-            <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Daftar seluruh karyawan tetap yang terdaftar.</p>
+            <h1 class="text-base font-semibold text-gray-900 dark:text-white">Data Karyawan Magang</h1>
+            <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Daftar seluruh karyawan magang yang terdaftar.</p>
         </div>
     </div>
 
@@ -75,15 +75,15 @@ ob_start();
                             <td
                                 class="<?= $borderClass ?> px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
                                 <?php
-                                $karyawan_obj = new KaryawanTetap(
+                                $karyawan_obj = new KaryawanMagang(
                                     $karyawan_item['id_karyawan'],
                                     $karyawan_item['nama_karyawan'],
                                     $karyawan_item['departemen'],
                                     $karyawan_item['hari_kerja_masuk'],
                                     $karyawan_item['gaji_dasar_per_hari'],
                                     $karyawan_item['jenis_karyawan'],
-                                    $karyawan_item['tunjangan_kesehatan'] ?? 0,
-                                    $karyawan_item['opsi_saham_id'] ?? ''
+                                    $karyawan_item['uang_saku_bulanan'] ?? 0,
+                                    $karyawan_item['sertifikat_kampus_merdeka'] ?? ''
                                 );
                                 ?>
                                 Rp <?= number_format($karyawan_obj->hitungGajiBersih(), 0, ',', '.') ?>
