@@ -12,4 +12,19 @@ class KaryawanTetap extends Karyawan{
         $this->tunjangan_kesehatan = $tunjangan_kesehatan;
         $this->opsi_saham_id = $opsi_saham_id;
     }
+
+    public function hitungGajiBersih() {
+        return ($this->hari_kerja_masuk * $this->gaji_dasar_per_hari) + $this->tunjangan_kesehatan;
+    }
+
+    public function tampilkanProfilKaryawan() {
+        echo "ID Karyawan: " . $this->id_karyawan . "<br>";
+        echo "Nama Karyawan: " . $this->nama_karyawan . "<br>";
+        echo "Departemen: " . $this->departemen . "<br>";
+        echo "Hari Kerja Masuk: " . $this->hari_kerja_masuk . "<br>";
+        echo "Gaji Dasar Per Hari: " . $this->gaji_dasar_per_hari . "<br>";
+        echo "Jenis Karyawan: " . $this->jenis_karyawan . "<br>";
+        echo "Tunjangan Kesehatan: " . $this->tunjangan_kesehatan . "<br>";
+        echo "Opsi Saham ID: " . $this->opsi_saham_id . "<br>";
+    }
 }
