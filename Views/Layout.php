@@ -81,7 +81,7 @@
             class="flex grow flex-col gap-y-4 overflow-y-auto border-r border-gray-200 bg-white px-5 dark:border-white/10 dark:bg-black/10">
 
             <div class="flex h-14 shrink-0 items-center">
-                <h1 class="text-lg font-bold text-indigo-600 dark:text-white">Manajemen Bioskop</h1>
+                <h1 class="text-lg font-bold text-indigo-600 dark:text-white">Manajemen Karyawan</h1>
             </div>
 
             <nav class="flex flex-1 flex-col">
