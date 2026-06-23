@@ -20,4 +20,19 @@ abstract class Karyawan {
     public abstract function hitungGajiBersih();
 
     public abstract function tampilkanProfilKaryawan();
+
+    // Function ini digunakan untuk mengambil semua data karyawan yang ada di database
+    public static function getAllKaryawan($koneksi) {
+        $query = "SELECT * FROM tabel_karyawan";
+        $result = $koneksi->query($query);
+        $karyawanList = [];
+
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $karyawanList[] = $row;
+            }
+        }
+
+        return $karyawanList;
+    }
 }
